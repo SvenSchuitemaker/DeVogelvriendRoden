@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <nav class="bg-blue-100 shadow-lg">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center"> <!-- Aangepast naar justify-between en items-center -->
+                <!-- Logo and image file -->
+                <a href="../index.html" class="flex items-center py-4 px-2">
+                    <img src="../images/VogelLogo.png" alt="Logo" class="h-16 w-24 mr-2">
+                </a>
+
+                <!-- Mobile menu button -->
+                <div class="lg:hidden">
+                    <button id="mobile-menu-button" class="text-gray-500 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Mobile menu -->
+                <div class="hidden lg:flex items-center space-x-1"> <!-- Aangepast naar hidden lg:flex -->
+                    <a href="../index.html"
+                        class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Home</a>
+                    <a href="bestuur.html"
+                        class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Bestuur</a>
+                    <a href="agenda.html"
+                        class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Agenda</a>
+                    <a href="sponsoren.html"
+                        class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Sponsoren</a>
+                    <a href="ringen.html"
+                        class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Ringen</a>
+                    <a href="lidworden.html"
+                        class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Lid
+                        worden</a>
+                    <a href="contact.html"
+                        class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Contact</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu dropdown -->
+        <div id="mobile-menu" class="lg:hidden hidden">
+            <a href="../index.html"
+                class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Home</a>
+            <a href="bestuur.html"
+                class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Bestuur</a>
+            <a href="agenda.html"
+                class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Agenda</a>
+            <a href="sponsoren.html"
+                class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Sponsoren</a>
+            <a href="ringen.html"
+                class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Ringen</a>
+            <a href="lidworden.html"
+                class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Lid
+                worden</a>
+            <a href="contact.html"
+                class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Contact</a>
+        </div>
+    </nav>
+
+    <!-- JavaScript for mobile menu functionality -->
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+
+    <h1 class="text-2xl font-bold flex justify-center p-10">Contacteer ons</h1>
+
+    <form method="post" action="https://www.devogelvriendroden.nl/cgi-bin/FormMail.pl" accept-charset="ISO-8859-1"
+        onsubmit="var originalCharset = document.charset; 
+document.charset = 'ISO-8859-1'; window.onbeforeunload = function () {document.charset=originalCharset;};"
+        class="flex flex-col items-center">
+        <table style="font-family: calibri, Arial, Helvetica, sans-serif"
+            class="block text-gray-700 font-bold mb-2 text-xl flex justify-center">
+
+            <tr>
+                <td> Uw naam: </td>
+                <td> <input name="naam" type="text" size="30"
+                        class="w-full px-2 py-2 border rounded-md focus:outline-none focus:border-blue-500"> </td>
+                <td> </td>
+            </tr>
+            <tr>
+                <td> Uw e-mail: </td>
+                <td> <input name="emailadres" type="text" size="30"
+                        class="w-full px-2 py-2 border rounded-md focus:outline-none focus:border-blue-500"> </td>
+            </tr>
+            <tr>
+                <td class="pr-5"> Uw telefoonnummer: </td>
+                <td> <input name="phonenumber" type="text" size="30"
+                        class="w-full px-2 py-2 border rounded-md focus:outline-none focus:border-blue-500"> </td>
+            </tr>
+            <tr>
+                <td> Uw bericht: </td>
+                <td> <input name="phonenumber" type="text" size="500"
+                        class="w-[400px] px-2 py-2 border rounded-md focus:outline-none focus:border-blue-500"> </td>
+            </tr>
+        </table>
+
+        <input type="submit" value="Verstuur"
+            class="mt-10 w-[300px] bg-blue-100 text-black font-bold py-2 px-3 rounded" />
+        <input type="hidden" name="recipient" value="info@devogelvriendroden.nl" />
+        <input type="hidden" name="redirect" value="www.devogelvriendroden.nl" />
+        <input type="hidden" name="missing_fields_redirect" value="www.devogelvriendroden.nl" />
+    </form>
+
+    <!-- Sponsoren -->
+    <div class="bg-blue-100 mt-24">
+        <h1 class="text-4xl pt-8 font-bold text-gray-900 mb-4 text-center">Onze trotse sponsoren</h1>
+        <div class="overflow-hidden py-8 bg-blue-100 whitespace-nowrap relative flex justify-center flex-wrap">
+            <a href="https://www.cafedepiraat.nl//" target="_blank"><img src="../sponsoren/Hoofdsponsoren/1.jpg"
+                    class="h-16 mx-10 border rounded-lg" /></a>
+            <a href="https://bijalexbrillen.nl/" target="_blank"><img src="../sponsoren/Hoofdsponsoren/2.jpg"
+                    class="h-16 mx-10 border rounded-lg" /></a>
+            <a href="https://www.fiftyfiftytolbert.nl/" target="_blank"><img src="../sponsoren/Hoofdsponsoren/3.jpg"
+                    class="h-16 mx-10 border rounded-lg" /></a>
+            <a href="https://www.otterdiercompleet.nl/" target="_blank"><img src="../sponsoren/Hoofdsponsoren/4.png"
+                    class="h-16 mx-10 border rounded-lg" /></a>
+            <a href="https://www.wiltjer.nl/klusbedrijf/" target="_blank"><img src="../sponsoren/Hoofdsponsoren/5.jpg"
+                    class="h-16 mx-10 border rounded-lg" /></a>
+            <a href="https://www.smitendouma.nl/" target="_blank"><img src="../sponsoren/Hoofdsponsoren/6.png"
+                    class="h-16 mx-10 border rounded-lg" /></a>
+            <a href="https://weru.nl/dealers/manfred-loohuis/" target="_blank"><img
+                    src="../sponsoren/Hoofdsponsoren/7.png" class="h-16 mx-10 border rounded-lg mt-10" /></a>
+            <a href="https://www.vidalibre.nl/" target="_blank"><img src="../sponsoren/Hoofdsponsoren/8.svg"
+                    class="h-16 mx-10 border rounded-lg mt-10" /></a>
+        </div>
+    </div>
+
+    <!-- Sponsoren -->
+    <div class="bg-blue-100">
+        <h1 class="text-4xl pt-8 font-bold text-gray-900 mb-4 text-center">Onze pagina sponsoren</h1>
+        <div class="flex justify-center py-8">
+            <a href="https://foodcaferoden.nl/" target="_blank"><img src="../sponsoren/Kleinesponsoren/contact/1.jpg"
+                    class="h-16 mx-10 border rounded-lg" /></a>
+            <a href="https://degrootroden.nl/" target="_blank"><img src="../sponsoren/Kleinesponsoren/contact/2.png"
+                    class="h-16 mx-10 border rounded-lg" /></a>
+            <a href="https://www.makelaardijvanderlaan.nl/" target="_blank"><img
+                    src="../sponsoren/Kleinesponsoren/contact/3.svg" class="h-16 mx-10 border rounded-lg" /></a>
+            <a href="https://www.noordhuisroden.nl/" target="_blank"><img
+                    src="../sponsoren/Kleinesponsoren/contact/4.jpg" class="h-16 mx-10 border rounded-lg" /></a>
+            <a href="https://www.scheerhoornbloemen.nl/" target="_blank"><img
+                    src="../sponsoren/Kleinesponsoren/contact/5.jpg" class="h-16 mx-10 border rounded-lg" /></a>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

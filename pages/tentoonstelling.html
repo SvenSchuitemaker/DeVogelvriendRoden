@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentoonstellingen</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <nav class="bg-blue-100 shadow-lg">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center"> <!-- Aangepast naar justify-between en items-center -->
+                <!-- Logo and image file -->
+                <a href="../index.html" class="flex items-center py-4 px-2">
+                    <img src="../images/VogelLogo.png" alt="Logo" class="h-16 w-24 mr-2">
+                </a>
+
+                <!-- Mobile menu button -->
+                <div class="lg:hidden">
+                    <button id="mobile-menu-button" class="text-gray-500 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Mobile menu -->
+                <div class="hidden lg:flex items-center space-x-1"> <!-- Aangepast naar hidden lg:flex -->
+                    <a href="../index.html"
+                        class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Home</a>
+                    <a href="bestuur.html"
+                        class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Bestuur</a>
+                    <a href="agenda.html"
+                        class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Agenda</a>
+                    <a href="sponsoren.html"
+                        class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Sponsoren</a>
+                    <a href="ringen.html"
+                        class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Ringen</a>
+                    <a href="lidworden.html"
+                        class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Lid
+                        worden</a>
+                    <a href="contact.html"
+                        class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Contact</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu dropdown -->
+        <div id="mobile-menu" class="lg:hidden hidden">
+            <a href="../index.html"
+                class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Home</a>
+            <a href="bestuur.html"
+                class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Bestuur</a>
+            <a href="agenda.html"
+                class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Agenda</a>
+            <a href="sponsoren.html"
+                class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Sponsoren</a>
+            <a href="ringen.html"
+                class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Ringen</a>
+            <a href="lidworden.html"
+                class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Lid
+                worden</a>
+            <a href="contact.html"
+                class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Contact</a>
+        </div>
+    </nav>
+
+    <!-- JavaScript for mobile menu functionality -->
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+
+    <!--Landing-->
+
+    <div class="flex items-center justify-center mt-16">
+        <div class="max-w-7xl mx-auto p-8 flex flex-wrap md:flex-nowrap items-center">
+            <!-- Afbeelding sectie -->
+            <div class="md:w-2/4 mr-10">
+                <img src="../images/TT.jpeg" alt="Vogel Afbeelding" class="w-full h-auto rounded-lg shadow-md">
+            </div>
+            <!-- Tekst sectie -->
+            <div class="md:w-2/4 md:pl-8">
+                <h1 class="text-4xl font-bold text-gray-900 mb-4">Bijzondere tentoonstelling te Roden</h1>
+                <p class="text-gray-700 mb-4">
+                    De Bijzondere Tentoonstelling 2023 was een groot succes. Met 225 ingezonden vogels was het een van
+                    de grootste vogeltentoonstellingen in noord Nederland van de afgelopen periode. Overall winnaar van
+                    de tentoonstelling was de heer H. Boer met zijn ingezonden zebravinken en gouldamadines (categorie
+                    Tropen). Andere winnaars waren de heer J. Dermois (categorie Postuurkanaries), de heer San Diego
+                    (categorie Kleurkanaries), de heer R. Kruier (categorie Parkieten), de heer P. van de Veen
+                    (categorie
+                    Grote Parkieten), de heer S. van der Heide (categorie Kleine Parkieten), de heer P. Kloosterman
+                    (categorie Kromsnavels) en de heer J. Meijer (categorie Duiven). De tentoonstelling werd mede
+                    mogelijk gemaakt door een groot aantal sponsoren. Zonder hen, vermeld op de website van de
+                    vereniging en in de tentoonstellingscatalogus, zou dit niet mogelijk zijn. Net zomin als zonder een
+                    groep enthousiaste vrijwilligers. De organisatie hoopt dat alle drie de groepen, sponsoren,
+                    vrijwilligers en inzenders, ook volgend jaar weer van de partij zijn in week 47. Veel van de vogels
+                    zullen ook te zien zijn op de Districtstenttonstelling Drenthe (DTT) op 14, 15 en 16 december in
+                    Ruinerwold. Halverwege januari vindt het Nederlands Kampioenschap plaats in Hardenberg.
+                </p>
+                <p class="font-bold text-gray-700">
+                    Met vriendelijke groet,
+                </p>
+                <p class="font-bold text-gray-700">Joost Schuitemaker,</p>
+                <p class="font-bold text-gray-700">Voorzitter De Vogelvriend Roden eo.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="flex items-center justify-center mt-16">
+        <p class="text-gray-700">Het inschrijfformulier is als Excel-bestand beschikbaar en te downloaden door op
+            onderstaande link te
+            klikken: <a href="../bestanden/Leeg-Inschrijfformulier-2023%20Roden.xlsm"
+                download="Leeg-Inschrijfformulier-2023 Roden.xlsm" class="font-bold">TT inschrijfformulier Roden</a>.
+        </p>
+    </div>
+
+    <div class="flex items-center justify-center mt-3">
+        <p class="text-gray-700">Het reglement is via deze link te lezen: <a
+                href="https://devogelvriendroden.nl/Tentoonstellingsreglement%20Bijzonder%20TT%20Roden%202023.pdf"
+                target="_blank" class="font-bold">TT
+                Reglement Roden</a></p>
+    </div>
+
+    <!-- Sponsoren -->
+    <div class="bg-blue-100 mt-24">
+        <h1 class="text-4xl pt-8 font-bold text-gray-900 mb-4 text-center">Onze trotse sponsoren</h1>
+        <div class="overflow-hidden py-8 bg-blue-100 whitespace-nowrap relative flex justify-center flex-wrap">
+            <a href="https://www.cafedepiraat.nl//" target="_blank"><img src="../sponsoren/Hoofdsponsoren/1.jpg"
+                    class="h-16 mx-10 border rounded-lg" /></a>
+            <a href="https://bijalexbrillen.nl/" target="_blank"><img src="../sponsoren/Hoofdsponsoren/2.jpg"
+                    class="h-16 mx-10 border rounded-lg" /></a>
+            <a href="https://www.fiftyfiftytolbert.nl/" target="_blank"><img src="../sponsoren/Hoofdsponsoren/3.jpg"
+                    class="h-16 mx-10 border rounded-lg" /></a>
+            <a href="https://www.otterdiercompleet.nl/" target="_blank"><img src="../sponsoren/Hoofdsponsoren/4.png"
+                    class="h-16 mx-10 border rounded-lg" /></a>
+            <a href="https://www.wiltjer.nl/klusbedrijf/" target="_blank"><img src="../sponsoren/Hoofdsponsoren/5.jpg"
+                    class="h-16 mx-10 border rounded-lg" /></a>
+            <a href="https://www.smitendouma.nl/" target="_blank"><img src="../sponsoren/Hoofdsponsoren/6.png"
+                    class="h-16 mx-10 border rounded-lg" /></a>
+            <a href="https://weru.nl/dealers/manfred-loohuis/" target="_blank"><img
+                    src="../sponsoren/Hoofdsponsoren/7.png" class="h-16 mx-10 border rounded-lg mt-10" /></a>
+            <a href="https://www.vidalibre.nl/" target="_blank"><img src="../sponsoren/Hoofdsponsoren/8.svg"
+                    class="h-16 mx-10 border rounded-lg mt-10" /></a>
+        </div>
+    </div>
+
+    <!-- Sponsoren -->
+    <div class="bg-blue-100">
+        <h1 class="text-4xl pt-8 font-bold text-gray-900 mb-4 text-center">Onze pagina sponsoren</h1>
+        <div class="flex justify-center py-8">
+            <a href="https://www.daannijman.nl/" target="_blank"><img
+                    src="../sponsoren/Kleinesponsoren/tentoonstelling/1.png" class="h-16 mx-10 border rounded-lg" /></a>
+            <a href="https://hovenier.website/peize/kruijer-kruijer-hoveniers/" target="_blank"><img
+                    src="../sponsoren/Kleinesponsoren/tentoonstelling/2.png" class="h-16 mx-10 border rounded-lg" /></a>
+            <a href="https://www.autofirst-zellerautos.nl/" target="_blank"><img
+                    src="../sponsoren/Kleinesponsoren/tentoonstelling/3.png" class="h-16 mx-10 border rounded-lg" /></a>
+            <a href="https://keukenhuisroden.nl/" target="_blank"><img
+                    src="../sponsoren/Kleinesponsoren/tentoonstelling/4.png" class="h-16 mx-10 border rounded-lg" /></a>
+            <a href="https://www.molenkamp.nl/" target="_blank"><img
+                    src="../sponsoren/Kleinesponsoren/tentoonstelling/5.png" class="h-16 mx-10 border rounded-lg" /></a>
+        </div>
+    </div>
+</body>
+
+</html>

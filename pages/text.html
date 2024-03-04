@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form method="post" action="http://www.devogelvriendroden.nl/cgi-bin/FormMail.pl" accept-charset="ISO-8859-1"
+        onsubmit="var originalCharset = document.charset; 
+document.charset = 'ISO-8859-1'; window.onbeforeunload = function () {document.charset=originalCharset;};">
+        <div class="mx-auto max-w-6xl flex flex-wrap">
+            <div id="Column_1" class="w-full md:w-1/2 md:pr-4">
+                <div class="mb-4 mx-3">
+                    <label for="lid" class="block text-gray-700 font-bold mb-2">Aanhef:</label>
+                    <select id="lid" name="lid"
+                        class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500">
+                        <option value="volwassen">Heer</option>
+                        <option value="jeugd">Mevrouw</option>
+                        <option value="donateur">Anders</option>
+                    </select>
+                </div>
+                <div class="mb-4 mx-3">
+                    <label for="naam" class="block text-gray-700 font-bold mb-2">Voornaam:</label>
+                    <input type="text" id="naam" name="naam"
+                        class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500" required>
+                </div>
+                <div class="mb-4 mx-3">
+                    <label for="voorletters" class="block text-gray-700 font-bold mb-2">Voorletters</label>
+                    <input type="text" id="voorletters" name="voorletters"
+                        class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500" required>
+                </div>
+                <div class="mb-4 mx-3">
+                    <label for="tussenvoegsels" class="block text-gray-700 font-bold mb-2">Tussenvoegsels:</label>
+                    <input type="text" id="tussenvoegsels" name="tussenvoegsels"
+                        class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500">
+                </div>
+                <div class="mb-4 mx-3">
+                    <label for="achternaam" class="block text-gray-700 font-bold mb-2">Achternaam:</label>
+                    <input type="text" id="achternaam" name="achternaam"
+                        class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500" required>
+                </div>
+                <div class="mb-4 mx-3">
+                    <label for="adres" class="block text-gray-700 font-bold mb-2">Straat:</label>
+                    <input type="text" id="adres" name="adres"
+                        class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500" required>
+                </div>
+                <div class="mb-4 mx-3">
+                    <label for="nummer" class="block text-gray-700 font-bold mb-2">Huisnummer + toevoeging:</label>
+                    <input type="text" id="nummer" name="nummer"
+                        class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500" required>
+                </div>
+                <div class="mb-4 mx-3">
+                    <label for="postcode" class="block text-gray-700 font-bold mb-2">Postcode:</label>
+                    <input type="text" id="postcode" name="postcode"
+                        class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500" required>
+                </div>
+            </div>
+            <div id="Column_2" class="w-full md:w-1/2 md:pr-4">
+                <div class="mb-4 mx-3">
+                    <label for="woonplaats" class="block text-gray-700 font-bold mb-2">Woonplaats:</label>
+                    <input type="text" id="woonplaats" name="woonplaats"
+                        class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500" required>
+                </div>
+                <div class="mb-4 mx-3">
+                    <label for="email" class="block text-gray-700 font-bold mb-2">Uw e-mail:</label>
+                    <input type="email" id="email" name="email"
+                        class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500">
+                </div>
+                <div class="mb-4 mx-3">
+                    <label for="nummer" class="block text-gray-700 font-bold mb-2">Telefoonnummer:</label>
+                    <input type="text" id="nummer" name="nummer"
+                        class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500">
+                </div>
+                <div class="mb-4 mx-3">
+                    <label for="nummer" class="block text-gray-700 font-bold mb-2">Mobiel nummer:</label>
+                    <input type="text" id="nummer" name="nummer"
+                        class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500">
+                </div>
+                <div class="mb-4 mx-3">
+                    <label for="birth" class="block text-gray-700 font-bold mb-2">Geboorte datum:</label>
+                    <input type="text" id="birth" name="birth"
+                        class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500" required>
+                </div>
+                <div class="mb-4 mx-3">
+                    <label for="lid" class="block text-gray-700 font-bold mb-2">Lidmaatschap:</label>
+                    <select id="lid" name="lid"
+                        class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500" required>
+                        <option value="volwassen">Volwassen</option>
+                        <option value="jeugd">Jeugd</option>
+                        <option value="donateur">Donateur</option>
+                    </select>
+                </div>
+
+                <div class="mb-4 mx-3">
+                    <label for="geschiedenis" class="block text-gray-700 font-bold mb-2">History:</label>
+                    <select id="geschiedenis" name="geschiedenis"
+                        class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500" required>
+                        <option value="nooit_lid">Nog nooit lid geweest</option>
+                        <option value="in_verleden_lid">In het verleden lid geweest</option>
+                        <option value="bondslid_andere_vereniging">Bondslid bij andere vereniging</option>
+                    </select>
+                </div>
+                <div class="mb-3  mx-3">
+                    <label for="kweek" class="block text-gray-700 font-bold mb-2">Kweeknummer:</label>
+                    <input type="text" id="kweek" name="kweek"
+                        class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500">
+                </div>
+            </div>
+            <div class="mx-3">
+                <input type="submit" class="mt-10 w-full bg-blue-100 text-black font-bold py-2 px-3 rounded"
+                    value="Verzenden">
+            </div>
+        </div>
+        <input type="hidden" name="recipient" value="info@devogelvriendroden.nl" />
+        <input type="hidden" name="redirect" value="www.devogelvriendroden.nl" />
+        <input type="hidden" name="missing_fields_redirect" value="www.devogelvriendroden.nl" />
+    </form>
+
+</body>
+</html>

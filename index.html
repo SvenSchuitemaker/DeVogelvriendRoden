@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>De Vogelvriend Roden</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <nav class="bg-blue-100 shadow-lg">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center"> <!-- Aangepast naar justify-between en items-center -->
+                <!-- Logo and image file -->
+                <a href="index.html" class="flex items-center py-4 px-2">
+                    <img src="images/logoZonderAchtergrond.png" alt="Logo" class="h-16 w-24 mr-2">
+                </a>
+
+                <!-- Mobile menu button -->
+                <div class="lg:hidden">
+                    <button id="mobile-menu-button" class="text-gray-500 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Mobile menu -->
+                <div class="hidden lg:flex items-center space-x-1"> <!-- Aangepast naar hidden lg:flex -->
+                    <a href="index.html"
+                        class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Home</a>
+                    <a href="pages/bestuur.html"
+                        class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Bestuur</a>
+                    <a href="pages/agenda.html"
+                        class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Agenda</a>
+                    <a href="pages/sponsoren.html"
+                        class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Sponsoren</a>
+                    <a href="pages/ringen.html"
+                        class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Ringen</a>
+                    <a href="pages/lidworden.html"
+                        class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Lid
+                        worden</a>
+                    <a href="pages/contact.html"
+                        class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Contact</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu dropdown -->
+        <div id="mobile-menu" class="lg:hidden hidden">
+            <a href="index.html"
+                class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Home</a>
+            <a href="pages/bestuur.html"
+                class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Bestuur</a>
+            <a href="pages/agenda.html"
+                class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Agenda</a>
+            <a href="pages/sponsoren.html"
+                class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Sponsoren</a>
+            <a href="pages/ringen.html"
+                class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Ringen</a>
+            <a href="pages/lidworden.html"
+                class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Lid
+                worden</a>
+            <a href="pages/contact.html"
+                class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Contact</a>
+        </div>
+    </nav>
+
+    <!-- JavaScript for mobile menu functionality -->
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+
+
+
+    <!--Landing-->
+
+    <div class="flex items-center justify-center mt-16">
+        <div class="max-w-7xl mx-auto p-8 flex flex-wrap md:flex-nowrap items-center">
+            <!-- Afbeelding sectie -->
+            <div class="md:w-2/4 mr-10">
+                <img src="images/logoZonderAchtergrond.png" alt="Vogel Afbeelding" class="w-full h-auto rounded-lg">
+            </div>
+            <!-- Tekst sectie -->
+            <div class="md:w-2/4 md:pl-8">
+                <h1 class="text-4xl font-bold text-gray-900 mb-4">De Vogelvriend Roden e.o.</h1>
+                <p class="text-gray-700 mb-4">
+                    De Vogelvriend Roden e.o. kan worden gezien als de vogelvereniging van Noordenveld en het
+                    Westerkwartier. De in 1952 opgerichte vereniging hoort bij de drie grootste vogelverenigingen van de
+                    drie Noordelijke provincies met een constant ledenaantal van circa 115 leden. Hiervan wonen ongeveer
+                    60 leden in Noordenveld en circa 60 leden in het Westerkwartier. De Vogelvriend Roden e.o. is
+                    aangesloten bij de Nederlandse Bond van Vogelliefhebbers (NBvV).
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!--Vereniging-->
+
+    <div class="mt-16 flex items-center justify-center">
+        <div class="max-w-7xl mx-auto p-8 flex flex-wrap md:flex-nowrap items-center">
+            <!-- Tekst sectie -->
+            <div class="md:w-2/4 md:pl-8 mr-10">
+                <h1 class="text-4xl font-bold text-gray-900 mb-4">De vereniging</h1>
+                <p class="text-gray-700 mb-4">
+                    Leden kunnen via onze vereniging ringen bestellen en ontvangen het maandblad Onze Vogels. Ook
+                    streeft de vereniging er naar om in het voor- en najaar een digitaal cluborgaan uit met actuele
+                    informatie over de vereniging. Daarnaast worden er activiteiten georganiseerd zoals clubavonden en
+                    de jaarlijkse tentoonstelling. De contributie van De Vogelvriend Roden e.o. bedraagt voor
+                    volwassenen 41,50 euro per jaar. Jeugdleden en donateurs betalen slechts 19,50 euro per jaar. U kunt
+                    zich online aanmelden via het digitale aanmeldingsformulier.
+                </p>
+            </div>
+            <!-- Afbeelding sectie -->
+            <div class="md:w-2/4">
+                <img src="images/OnzeVogels.jpg" alt="OneVogels Afbeelding" class="w-full h-auto rounded-lg shadow-md">
+            </div>
+        </div>
+    </div>
+
+    <!-- Sponsoren -->
+    <div class="bg-blue-100 mt-16">
+        <h1 class="text-4xl pt-8 font-bold text-gray-900 mb-4 text-center">Onze trotse sponsoren</h1>
+        <div class="overflow-hidden py-8 bg-blue-100 whitespace-nowrap relative flex justify-center flex-wrap">
+            <a href="https://www.cafedepiraat.nl//" target="_blank"><img src="./sponsoren/Hoofdsponsoren/1.jpg"
+                    class="h-16 mx-10 border rounded-lg" /></a>
+            <a href="https://bijalexbrillen.nl/" target="_blank"><img src="./sponsoren/Hoofdsponsoren/2.jpg"
+                    class="h-16 mx-10 border rounded-lg" /></a>
+            <a href="https://www.fiftyfiftytolbert.nl/" target="_blank"><img src="./sponsoren/Hoofdsponsoren/3.jpg"
+                    class="h-16 mx-10 border rounded-lg" /></a>
+            <a href="https://www.otterdiercompleet.nl/" target="_blank"><img src="./sponsoren/Hoofdsponsoren/4.png"
+                    class="h-16 mx-10 border rounded-lg" /></a>
+            <a href="https://www.wiltjer.nl/klusbedrijf/" target="_blank"><img src="./sponsoren/Hoofdsponsoren/5.jpg"
+                    class="h-16 mx-10 border rounded-lg" /></a>
+            <a href="https://www.smitendouma.nl/" target="_blank"><img src="./sponsoren/Hoofdsponsoren/6.png"
+                    class="h-16 mx-10 border rounded-lg" /></a>
+            <a href="https://weru.nl/dealers/manfred-loohuis/" target="_blank"><img
+                    src="./sponsoren/Hoofdsponsoren/7.png" class="h-16 mx-10 border rounded-lg mt-10" /></a>
+            <a href="https://www.vidalibre.nl/" target="_blank"><img src="./sponsoren/Hoofdsponsoren/8.svg"
+                    class="h-16 mx-10 border rounded-lg mt-10" /></a>
+        </div>
+    </div>
+
+    <!--Clubavond-->
+
+    <div class="flex items-center justify-center mt-16">
+        <div class="max-w-7xl mx-auto p-8 flex flex-wrap md:flex-nowrap items-center">
+            <!-- Afbeelding sectie -->
+            <div class="md:w-2/4 mr-10">
+                <img src="images/Clubavond.jpg" alt="Club Afbeelding" class="w-full h-auto rounded-lg shadow-md">
+            </div>
+            <!-- Tekst sectie -->
+            <div class="md:w-2/4 md:pl-8">
+                <h1 class="text-4xl font-bold text-gray-900 mb-4">De Clubavonden</h1>
+                <p class="text-gray-700 mb-4">
+                    De eerste volgende clubavond staat gepland voor 16 mei 2023 20:00uur en zal plaatsvinden in
+                    dorpshuis ''Nijroon'' roderweg 86 9311 PA te Nieuw-Roden. De avond zal verzorgd worden door
+                    Johan
+                    Zwarts. Johan is gespecialiseerd in oa Australische prachtvinken en parkieten, insecten en
+                    vruchteneters, amazones, lories en zebravinken.
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <!--TT Tentoonstelling-->
+
+    <div class="mt-16 flex items-center justify-center">
+        <div class="max-w-7xl mx-auto p-8 flex flex-wrap md:flex-nowrap items-center">
+            <!-- Tekst sectie -->
+            <div class="md:w-2/4 md:pl-8 mr-10">
+                <!-- Titel -->
+                <h1 class="text-4xl font-bold text-gray-900 mb-4">Tentoonstelling</h1>
+                <p class="text-gray-700 mb-4">
+                    De Bijzondere Tentoonstelling 2023 was een groot succes. Met 225 ingezonden vogels was het een van
+                    de grootste vogeltentoonstellingen in noord Nederland van de afgelopen periode. Overall winnaar van
+                    de tentoonstelling was de heer H. Boer met zijn ingezonden zebravinken en gouldamadines (categorie
+                    Tropen). Andere winnaars waren de heer J. Dermois (categorie Postuurkanaries), de heer San Diego
+                    (categorie Kleurkanaries), de heer R. Kruier (categorie Parkieten, de heer P. van de Veen (categorie
+                    Grote Parkieten), de heer S. van der Heide (.....
+                </p>
+                <button class="p-3 bg-blue-100 border-slate-200 rounded-xl"
+                    onclick="window.location.href='pages/tentoonstelling.html'">Meer informatie</button>
+            </div>
+            <!-- Afbeelding sectie -->
+            <div class="md:w-2/4">
+                <img src="images/TT.jpeg" alt="OneVogels Afbeelding" class="w-full h-auto rounded-lg shadow-md">
+            </div>
+        </div>
+    </div>
+
+    <!-- Sponsoren -->
+    <div class="bg-blue-100 mt-16">
+        <h1 class="text-4xl pt-8 font-bold text-gray-900 mb-4 text-center">Onze pagina sponsoren</h1>
+        <div class="flex justify-center py-8">
+            <a href="https://www.powerplustools.nl/" target="_blank"><img src="./sponsoren/Kleinesponsoren/index/1.png"
+                    class="h-16 mx-10 border rounded-lg" /></a>
+            <a href="https://www.plezierinhetwerk.com/plezier-in-het-werk/" target="_blank"><img
+                    src="./sponsoren/Kleinesponsoren/index/2.png" class="h-16 mx-10 border rounded-lg" /></a>
+            <a href="https://www.hovenierdeboer.nl/"
+                target="_blank"><img src="./sponsoren/Kleinesponsoren/index/3.webp"
+                    class="h-16 mx-10 border rounded-lg" /></a>
+            <a href="https://www.kamp-bouwadvies.nl/home/?p=1" target="_blank"><img
+                    src="./sponsoren/Kleinesponsoren/index/4.jpg" class="h-16 mx-10 border rounded-lg" /></a>
+            <a href="https://velodroom.nl/" target="_blank"><img src="./sponsoren/Kleinesponsoren/index/5.jpg"
+                    class="h-16 mx-10 border rounded-lg" /></a>
+        </div>
+    </div>
+</body>
+
+</html>

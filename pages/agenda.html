@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda</title>
+    <link rel="stylesheet" href="table.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <nav class="bg-blue-100 shadow-lg">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center"> <!-- Aangepast naar justify-between en items-center -->
+                <!-- Logo and image file -->
+                <a href="../index.html" class="flex items-center py-4 px-2">
+                    <img src="../images/VogelLogo.png" alt="Logo" class="h-16 w-24 mr-2">
+                </a>
+
+                <!-- Mobile menu button -->
+                <div class="lg:hidden">
+                    <button id="mobile-menu-button" class="text-gray-500 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Mobile menu -->
+                <div class="hidden lg:flex items-center space-x-1"> <!-- Aangepast naar hidden lg:flex -->
+                    <a href="../index.html"
+                        class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Home</a>
+                    <a href="bestuur.html"
+                        class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Bestuur</a>
+                    <a href="agenda.html"
+                        class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Agenda</a>
+                    <a href="sponsoren.html"
+                        class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Sponsoren</a>
+                    <a href="ringen.html"
+                        class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Ringen</a>
+                    <a href="lidworden.html"
+                        class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Lid
+                        worden</a>
+                    <a href="contact.html"
+                        class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Contact</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu dropdown -->
+        <div id="mobile-menu" class="lg:hidden hidden">
+            <a href="../index.html"
+                class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Home</a>
+            <a href="bestuur.html"
+                class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Bestuur</a>
+            <a href="agenda.html"
+                class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Agenda</a>
+            <a href="sponsoren.html"
+                class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Sponsoren</a>
+            <a href="ringen.html"
+                class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Ringen</a>
+            <a href="lidworden.html"
+                class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Lid
+                worden</a>
+            <a href="contact.html"
+                class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Contact</a>
+        </div>
+    </nav>
+
+    <!-- JavaScript for mobile menu functionality -->
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+
+    <!--Landing-->
+
+    <div class="text-center mt-20">
+        <h1 class="text-3xl font-bold">De Agenda</h1>
+        <p class="text-xl">Hieronder alle evenementen die wij organiseren/aan deelnemen.</p>
+    </div>
+
+    <div class="flex justify-center mt-16">
+        <table class="border border-slate-300 w-[60%]">
+            <thead class="bg-blue-100">
+                <tr>
+                    <th>Evenement</th>
+                    <th>Datum</th>
+                    <th>Tijd</th>
+                    <th>Locatie</th>
+                    <th>Adres</th>
+                    <th>Plaats</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Hier kunt u rijen met gegevens toevoegen -->
+                <tr>
+                    <td>Jaarvergadering</td>
+                    <td>19-03-2024</td>
+                    <td></td>
+                    <td>Grote zaal</td>
+                    <td></td>
+                    <td>Nijroon</td>
+                </tr>
+                <tr>
+                    <td>Clubavond, presentatie Theo Kompier</td>
+                    <td>07-05-2024</td>
+                    <td></td>
+                    <td>Grote zaal</td>
+                    <td></td>
+                    <td>Nijroon</td>
+                </tr>
+                <tr>
+                    <td>Tentoonstelling</td>
+                    <td>19 t/m 23 nov. 2024</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <!-- Voeg meer rijen toe zoals nodig -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Sponsoren -->
+    <div class="bg-blue-100 mt-24">
+        <h1 class="text-4xl pt-8 font-bold text-gray-900 mb-4 text-center">Onze trotse sponsoren</h1>
+        <div class="overflow-hidden py-8 bg-blue-100 whitespace-nowrap relative flex justify-center flex-wrap">
+            <a href="https://www.cafedepiraat.nl//" target="_blank"><img src="../sponsoren/Hoofdsponsoren/1.jpg"
+                    class="h-16 mx-10 border rounded-lg" /></a>
+            <a href="https://bijalexbrillen.nl/" target="_blank"><img src="../sponsoren/Hoofdsponsoren/2.jpg"
+                    class="h-16 mx-10 border rounded-lg" /></a>
+            <a href="https://www.fiftyfiftytolbert.nl/" target="_blank"><img src="../sponsoren/Hoofdsponsoren/3.jpg"
+                    class="h-16 mx-10 border rounded-lg" /></a>
+            <a href="https://www.otterdiercompleet.nl/" target="_blank"><img src="../sponsoren/Hoofdsponsoren/4.png"
+                    class="h-16 mx-10 border rounded-lg" /></a>
+            <a href="https://www.wiltjer.nl/klusbedrijf/" target="_blank"><img src="../sponsoren/Hoofdsponsoren/5.jpg"
+                    class="h-16 mx-10 border rounded-lg" /></a>
+            <a href="https://www.smitendouma.nl/" target="_blank"><img src="../sponsoren/Hoofdsponsoren/6.png"
+                    class="h-16 mx-10 border rounded-lg" /></a>
+            <a href="https://weru.nl/dealers/manfred-loohuis/" target="_blank"><img
+                    src="../sponsoren/Hoofdsponsoren/7.png" class="h-16 mx-10 border rounded-lg mt-10" /></a>
+            <a href="https://www.vidalibre.nl/" target="_blank"><img src="../sponsoren/Hoofdsponsoren/8.svg"
+                    class="h-16 mx-10 border rounded-lg mt-10" /></a>
+        </div>
+    </div>
+
+    <!-- Sponsoren -->
+    <div class="bg-blue-100">
+        <h1 class="text-4xl pt-8 font-bold text-gray-900 mb-4 text-center">Onze pagina sponsoren</h1>
+        <div class="overflow-hidden py-8 bg-blue-100 whitespace-nowrap relative flex justify-center">
+            <a href="https://hoveniersbedrijfkuiper.nl/" target="_blank"><img src="../sponsoren/Kleinesponsoren/agenda/1.png" class="h-16 mx-10 border rounded-lg" /></a>
+            <a href="https://www.welkoop.nl/winkels/leek" target="_blank"><img src="../sponsoren/Kleinesponsoren/agenda/2.jpg" class="h-16 mx-10 border rounded-lg" /></a>
+            <a href="https://www.dewesterd.nl/contactgegevens-bosch-car-service-de-westerd-peize/" target="_blank"><img src="../sponsoren/Kleinesponsoren/agenda/3.svg" class="h-16 mx-10 border rounded-lg" /></a>
+            <a href="https://boerntrek.nl/" target="_blank"><img src="../sponsoren/Kleinesponsoren/agenda/4.svg" class="h-16 mx-10 border rounded-lg" /></a>
+            <a href="https://www.pedicure-noordnederland.nl/" target="_blank"><img src="../sponsoren/Kleinesponsoren/agenda/8.svg" class="h-16 mx-10 border rounded-lg" /></a>
+        </div>
+        <div class="overflow-hidden py-8 bg-blue-100 whitespace-nowrap relative flex justify-center">
+            <a href="https://hotelonderdelinden.nl/" target="_blank"><img src="../sponsoren/Kleinesponsoren/agenda/5.png" class="h-16 mx-10 border rounded-lg" /></a>
+            <a href="https://www.devriesxl.nl/" target="_blank"><img src="../sponsoren/Kleinesponsoren/agenda/6.png" class="h-16 mx-10 border rounded-lg" /></a>
+            <a href="https://steenhouwerij-krul.nl/" target="_blank"><img src="../sponsoren/Kleinesponsoren/agenda/7.png" class="h-16 mx-10 border rounded-lg" /></a>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

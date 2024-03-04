@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ringen Bestellen</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <nav class="bg-blue-100 shadow-lg">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center"> <!-- Aangepast naar justify-between en items-center -->
+                <!-- Logo and image file -->
+                <a href="../index.html" class="flex items-center py-4 px-2">
+                    <img src="../images/VogelLogo.png" alt="Logo" class="h-16 w-24 mr-2">
+                </a>
+
+                <!-- Mobile menu button -->
+                <div class="lg:hidden">
+                    <button id="mobile-menu-button" class="text-gray-500 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Mobile menu -->
+                <div class="hidden lg:flex items-center space-x-1"> <!-- Aangepast naar hidden lg:flex -->
+                    <a href="../index.html"
+                        class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Home</a>
+                    <a href="bestuur.html"
+                        class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Bestuur</a>
+                    <a href="agenda.html"
+                        class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Agenda</a>
+                    <a href="sponsoren.html"
+                        class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Sponsoren</a>
+                    <a href="ringen.html"
+                        class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Ringen</a>
+                    <a href="lidworden.html"
+                        class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Lid
+                        worden</a>
+                    <a href="contact.html"
+                        class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Contact</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu dropdown -->
+        <div id="mobile-menu" class="lg:hidden hidden">
+            <a href="../index.html"
+                class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Home</a>
+            <a href="bestuur.html"
+                class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Bestuur</a>
+            <a href="agenda.html"
+                class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Agenda</a>
+            <a href="sponsoren.html"
+                class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Sponsoren</a>
+            <a href="ringen.html"
+                class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Ringen</a>
+            <a href="lidworden.html"
+                class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Lid
+                worden</a>
+            <a href="contact.html"
+                class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Contact</a>
+        </div>
+    </nav>
+
+    <!-- JavaScript for mobile menu functionality -->
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+
+
+
+    <!--Landing-->
+
+    <div class="mt-20 flex items-center justify-center">
+        <div class="max-w-7xl mx-auto p-8 flex flex-wrap md:flex-nowrap items-center">
+            <!-- Tekst sectie -->
+            <div class="md:w-2/4 md:pl-8 mr-10 text-gray-700">
+                <h1 class="text-4xl font-bold text-gray-900 mb-4">Ringen bestellen</h1>
+                <p class="text-gray-700 mb-4">U kunt via de Bond ringen bestellen via <a href="https://ringennbvv.nl/"
+                        target="_blank">https://ringennbvv.nl/</a> met het
+                    ringnummer en de gegevens die via de vereniging ontvangt. De eerste keer dat u hierop klikt wordt u
+                    gevraagd om een account bij aan te maken. Leden kunnen dit doen met de door de bond aan hen
+                    verstrekte gegevens (kweeknummer, afdelingscode). Deze vindt u op de adreswikkel van ons maandblad
+                    en op uw lidmaatschapsbewijs. Tevens vragen ze u een wachtwoord en een uniek mailadres op te geven.
+                    Naar dit mailadres sturen ze u de status van uw bestelling.
+                </p>
+                <p class="text-gray-700 mb-4">Niet alle mensen wensen echter lid van een afdeling te worden en ook daar
+                    houdt de NBvV rekening mee. De NBvV kent daarom twee lidmaatschappen, die overigens dezelfde rechten
+                    en plichten met zich meebrengen;</p>
+
+                <ol class="ml-4 list-decimal list-inside list-outside text-gray-700 mb-4">
+                    <li>Een lidmaatschap rechtstreeks via de <a href="https://www.nbvv.nl/shop/" target="_blank"
+                            class="font-bold">webshop van de NBvV</a> voor 42 euro per jaar (lid worden van een afdeling
+                        is in de meeste gevallen goedkoper).</li>
+                    <li class="mt-2">Een lidmaatschap via een afdeling varieert van 30 tot 60 euro per jaar. U wordt na
+                        aanmelding
+                        bij de secretaris lid van de afdeling van uw keuze en automatisch lid van de NBvV. Voor
+                        jeugdleden tot en met 16 jaar die zich via een afdeling aanmelden geldt een korting van 50%
+                        U kunt u ook als lid opgeven bij één van onze promoteams. De promoteams zijn vaak aanwezig op
+                        grote tentoonstellingen, markten en beurzen</li>
+                </ol>
+
+                <p>U ontvangt;</p>
+
+                <ul class="list-disc list-inside">
+                    <li>Een informatiepakket van de NBvV</li>
+                    <li>Een uniek kweeknummer waarmee u ringen kunt bestellen</li>
+                    <li>De hele jaargang van ons maandelijks magazine Onze Vogels</li>
+                    <li>Het recht om aan tentoonstellingen deel te nemen</li>
+                    <li>Alle andere voordelen die een lidmaatschap met zich meebrengen</li>
+                </ul>
+
+                <a href="https://www.nbvv.nl/ringen/" target="_blank"><input type="submit"
+                        class="mt-10 w-full bg-blue-100 text-black font-bold py-2 px-4 rounded"
+                        value="Bestel formulier"></a>
+            </div>
+            <!-- Afbeelding sectie -->
+            <div class="md:w-2/4">
+                <img src="../images/Ringen.jpg" alt="Ringen Afbeelding" class="w-[75%] h-auto">
+            </div>
+        </div>
+    </div>
+
+    <!-- Sponsoren -->
+    <div class="bg-blue-100 mt-24">
+        <h1 class="text-4xl pt-8 font-bold text-gray-900 mb-4 text-center">Onze trotse sponsoren</h1>
+        <div class="overflow-hidden py-8 bg-blue-100 whitespace-nowrap relative flex justify-center flex-wrap">
+            <a href="https://www.cafedepiraat.nl//" target="_blank"><img src="../sponsoren/Hoofdsponsoren/1.jpg"
+                    class="h-16 mx-10 border rounded-lg" /></a>
+            <a href="https://bijalexbrillen.nl/" target="_blank"><img src="../sponsoren/Hoofdsponsoren/2.jpg"
+                    class="h-16 mx-10 border rounded-lg" /></a>
+            <a href="https://www.fiftyfiftytolbert.nl/" target="_blank"><img src="../sponsoren/Hoofdsponsoren/3.jpg"
+                    class="h-16 mx-10 border rounded-lg" /></a>
+            <a href="https://www.otterdiercompleet.nl/" target="_blank"><img src="../sponsoren/Hoofdsponsoren/4.png"
+                    class="h-16 mx-10 border rounded-lg" /></a>
+            <a href="https://www.wiltjer.nl/klusbedrijf/" target="_blank"><img src="../sponsoren/Hoofdsponsoren/5.jpg"
+                    class="h-16 mx-10 border rounded-lg" /></a>
+            <a href="https://www.smitendouma.nl/" target="_blank"><img src="../sponsoren/Hoofdsponsoren/6.png"
+                    class="h-16 mx-10 border rounded-lg" /></a>
+            <a href="https://weru.nl/dealers/manfred-loohuis/" target="_blank"><img
+                    src="../sponsoren/Hoofdsponsoren/7.png" class="h-16 mx-10 border rounded-lg mt-10" /></a>
+            <a href="https://www.vidalibre.nl/" target="_blank"><img src="../sponsoren/Hoofdsponsoren/8.svg"
+                    class="h-16 mx-10 border rounded-lg mt-10" /></a>
+        </div>
+    </div>
+
+    <!-- Sponsoren -->
+    <div class="bg-blue-100">
+        <h1 class="text-4xl pt-8 font-bold text-gray-900 mb-4 text-center">Onze pagina sponsoren</h1>
+        <div class="flex justify-center py-8">
+            <a href="https://www.gerritsbarbershop.nl/" target="_blank"><img
+                    src="../sponsoren/Kleinesponsoren/ringen/1.png" class="h-16 mx-10 border rounded-lg" /></a>
+            <a href="https://www.muziekhuisdacapo.nl/" target="_blank"><img
+                    src="../sponsoren/Kleinesponsoren/ringen/2.png" class="h-16 mx-10 border rounded-lg" /></a>
+            <a href="https://www.huizingametalen.nl/" target="_blank"><img
+                    src="../sponsoren/Kleinesponsoren/ringen/3.png" class="h-16 mx-10 border rounded-lg" /></a>
+            <a href="https://jonkmangarantiemakelaars.nl/" target="_blank"><img
+                    src="../sponsoren/Kleinesponsoren/ringen/4.png" class="h-16 mx-10 border rounded-lg" /></a>
+            <a href="http://www.autolouwes.nl/" target="_blank"><img src="../sponsoren/Kleinesponsoren/ringen/5.jpg"
+                    class="h-16 mx-10 border rounded-lg" /></a>
+            <a href="https://teerling.keurslager.nl/" target="_blank"><img
+                    src="../sponsoren/Kleinesponsoren/ringen/6.png" class="h-16 mx-10 border rounded-lg" /></a>
+            <a href="https://dekorenaar.echtebakker.nl/nl-nl" target="_blank"><img
+                    src="../sponsoren/Kleinesponsoren/ringen/7.jpg" class="h-16 mx-10 border rounded-lg" /></a>
+        </div>
+    </div>
+
+</body>
+
+</html>
