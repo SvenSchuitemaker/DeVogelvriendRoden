@@ -1,0 +1,50 @@
+media:
+  input: sponsoren/uploads
+  output: /sponsoren/uploads
+  extensions: [png, jpg, jpeg, webp]
+content:
+  - name: sponsors
+    label: Sponsoren
+    type: file
+    path: data/sponsors.json
+    format: json
+    list: true
+    fields:
+      - name: name
+        label: Bedrijfsnaam
+        type: string
+        required: true
+      - name: url
+        label: Website URL
+        type: string
+        required: true
+      - name: image
+        label: Logo
+        type: image
+        required: true
+      - name: tier
+        label: Sponsorstatus
+        type: select
+        options:
+          - { name: Goud, value: gold }
+          - { name: Zilver, value: silver }
+          - { name: Brons, value: bronze }
+      - name: page
+        label: Pagina (voor zilver en brons)
+        type: select
+        options:
+          - { name: Home, value: index }
+          - { name: Bestuur, value: bestuur }
+          - { name: Agenda, value: agenda }
+          - { name: Sponsoren, value: sponsoren }
+          - { name: Ringen, value: ringen }
+          - { name: Lid worden, value: lidworden }
+          - { name: Contact, value: contact }
+          - { name: Tentoonstelling, value: tentoonstelling }
+      - name: order
+        label: Volgorde
+        type: number
+      - name: active
+        label: Actief
+        type: boolean
+        default: true
