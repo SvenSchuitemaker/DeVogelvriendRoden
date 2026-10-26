@@ -1,0 +1,506 @@
+[
+  {
+    "name": "Café De Piraat",
+    "url": "https://www.cafedepiraat.nl//",
+    "image": "sponsoren/Hoofdsponsoren/1.jpg",
+    "tier": "gold",
+    "page": "",
+    "order": 1,
+    "active": true
+  },
+  {
+    "name": "Bij Alex Brillen",
+    "url": "https://bijalexbrillen.nl/",
+    "image": "sponsoren/Hoofdsponsoren/2.jpg",
+    "tier": "gold",
+    "page": "",
+    "order": 2,
+    "active": true
+  },
+  {
+    "name": "Fifty Fifty Tolbert",
+    "url": "https://www.fiftyfiftytolbert.nl/",
+    "image": "sponsoren/Hoofdsponsoren/3.jpg",
+    "tier": "gold",
+    "page": "",
+    "order": 3,
+    "active": true
+  },
+  {
+    "name": "Otter Diercompleet",
+    "url": "https://www.otterdiercompleet.nl/",
+    "image": "sponsoren/Hoofdsponsoren/4.png",
+    "tier": "gold",
+    "page": "",
+    "order": 4,
+    "active": true
+  },
+  {
+    "name": "Wiltjer",
+    "url": "https://www.wiltjer.nl/klusbedrijf/",
+    "image": "sponsoren/Hoofdsponsoren/5.jpg",
+    "tier": "gold",
+    "page": "",
+    "order": 5,
+    "active": true
+  },
+  {
+    "name": "Smit en Douma",
+    "url": "https://www.smitendouma.nl/",
+    "image": "sponsoren/Hoofdsponsoren/6.png",
+    "tier": "gold",
+    "page": "",
+    "order": 6,
+    "active": true
+  },
+  {
+    "name": "Manfred Loohuis",
+    "url": "https://weru.nl/dealers/manfred-loohuis/",
+    "image": "sponsoren/Hoofdsponsoren/7.png",
+    "tier": "gold",
+    "page": "",
+    "order": 7,
+    "active": true
+  },
+  {
+    "name": "Vida Libre",
+    "url": "https://www.vidalibre.nl/",
+    "image": "sponsoren/Hoofdsponsoren/8.svg",
+    "tier": "gold",
+    "page": "",
+    "order": 8,
+    "active": true
+  },
+  {
+    "name": "Powerplustools",
+    "url": "https://www.powerplustools.nl/",
+    "image": "sponsoren/Kleinesponsoren/index/1.png",
+    "tier": "bronze",
+    "page": "index",
+    "order": 1,
+    "active": true
+  },
+  {
+    "name": "Plezier in het werk",
+    "url": "https://www.plezierinhetwerk.com/plezier-in-het-werk/",
+    "image": "sponsoren/Kleinesponsoren/index/2.png",
+    "tier": "bronze",
+    "page": "index",
+    "order": 2,
+    "active": true
+  },
+  {
+    "name": "Hovenier de Boer",
+    "url": "https://www.hovenierdeboer.nl/",
+    "image": "sponsoren/Kleinesponsoren/index/3.webp",
+    "tier": "bronze",
+    "page": "index",
+    "order": 3,
+    "active": true
+  },
+  {
+    "name": "Kamp Bouwadvies",
+    "url": "https://www.kamp-bouwadvies.nl/home/?p=1",
+    "image": "sponsoren/Kleinesponsoren/index/4.jpg",
+    "tier": "bronze",
+    "page": "index",
+    "order": 4,
+    "active": true
+  },
+  {
+    "name": "Velodroom",
+    "url": "https://velodroom.nl/",
+    "image": "sponsoren/Kleinesponsoren/index/5.jpg",
+    "tier": "bronze",
+    "page": "index",
+    "order": 5,
+    "active": true
+  },
+  {
+    "name": "Vishuys",
+    "url": "https://www.vishuys.nl/",
+    "image": "sponsoren/Kleinesponsoren/bestuur/1.png",
+    "tier": "bronze",
+    "page": "bestuur",
+    "order": 1,
+    "active": true
+  },
+  {
+    "name": "ERA Makelaardij",
+    "url": "https://www.era.nl/makelaar/peize/hoofdstraat/dinkla-numan-hof-era-makelaardij/",
+    "image": "sponsoren/Kleinesponsoren/bestuur/2.png",
+    "tier": "bronze",
+    "page": "bestuur",
+    "order": 2,
+    "active": true
+  },
+  {
+    "name": "Buiter Roden",
+    "url": "https://buiterroden.nl/",
+    "image": "sponsoren/Kleinesponsoren/bestuur/3.png",
+    "tier": "bronze",
+    "page": "bestuur",
+    "order": 3,
+    "active": true
+  },
+  {
+    "name": "Drents Kwartiertje",
+    "url": "https://www.lunchroom-drentskwartiertje.nl/",
+    "image": "sponsoren/Kleinesponsoren/bestuur/4.png",
+    "tier": "bronze",
+    "page": "bestuur",
+    "order": 4,
+    "active": true
+  },
+  {
+    "name": "Roggeveld",
+    "url": "https://www.roggeveld.nl/",
+    "image": "sponsoren/Kleinesponsoren/bestuur/5.jpg",
+    "tier": "bronze",
+    "page": "bestuur",
+    "order": 5,
+    "active": true
+  },
+  {
+    "name": "Bouwbedrijf A. van Duinen",
+    "url": "https://www.aannemer-nu.nl/zevenhuizen-gr/bouwbedrijf-a-van-duinen/",
+    "image": "sponsoren/Kleinesponsoren/bestuur/6.png",
+    "tier": "bronze",
+    "page": "bestuur",
+    "order": 6,
+    "active": true
+  },
+  {
+    "name": "Hoveniersbedrijf Kuiper",
+    "url": "https://hoveniersbedrijfkuiper.nl/",
+    "image": "sponsoren/Kleinesponsoren/agenda/1.png",
+    "tier": "bronze",
+    "page": "agenda",
+    "order": 1,
+    "active": true
+  },
+  {
+    "name": "Welkoop Leek",
+    "url": "https://www.welkoop.nl/winkels/leek",
+    "image": "sponsoren/Kleinesponsoren/agenda/2.jpg",
+    "tier": "bronze",
+    "page": "agenda",
+    "order": 2,
+    "active": true
+  },
+  {
+    "name": "De Westerd",
+    "url": "https://www.dewesterd.nl/contactgegevens-bosch-car-service-de-westerd-peize/",
+    "image": "sponsoren/Kleinesponsoren/agenda/3.svg",
+    "tier": "bronze",
+    "page": "agenda",
+    "order": 3,
+    "active": true
+  },
+  {
+    "name": "Boerntrek",
+    "url": "https://boerntrek.nl/",
+    "image": "sponsoren/Kleinesponsoren/agenda/4.svg",
+    "tier": "bronze",
+    "page": "agenda",
+    "order": 4,
+    "active": true
+  },
+  {
+    "name": "Pedicure Noord-Nederland",
+    "url": "https://www.pedicure-noordnederland.nl/",
+    "image": "sponsoren/Kleinesponsoren/agenda/8.svg",
+    "tier": "bronze",
+    "page": "agenda",
+    "order": 5,
+    "active": true
+  },
+  {
+    "name": "Hotel Onder de Linden",
+    "url": "https://hotelonderdelinden.nl/",
+    "image": "sponsoren/Kleinesponsoren/agenda/5.png",
+    "tier": "bronze",
+    "page": "agenda",
+    "order": 6,
+    "active": true
+  },
+  {
+    "name": "De Vries XL",
+    "url": "https://www.devriesxl.nl/",
+    "image": "sponsoren/Kleinesponsoren/agenda/6.png",
+    "tier": "bronze",
+    "page": "agenda",
+    "order": 7,
+    "active": true
+  },
+  {
+    "name": "Steenhouwerij Krul",
+    "url": "https://steenhouwerij-krul.nl/",
+    "image": "sponsoren/Kleinesponsoren/agenda/7.png",
+    "tier": "bronze",
+    "page": "agenda",
+    "order": 8,
+    "active": true
+  },
+  {
+    "name": "Mark's Eethuys",
+    "url": "https://www.markseethuys.nl/",
+    "image": "sponsoren/Kleinesponsoren/sponsoren/1.jpg",
+    "tier": "bronze",
+    "page": "sponsoren",
+    "order": 1,
+    "active": true
+  },
+  {
+    "name": "Elzer Optiek",
+    "url": "https://www.elzeroptiek.nl/",
+    "image": "sponsoren/Kleinesponsoren/sponsoren/2.png",
+    "tier": "bronze",
+    "page": "sponsoren",
+    "order": 2,
+    "active": true
+  },
+  {
+    "name": "Kooistra Keukens",
+    "url": "https://www.kooistrakeukens.nl/",
+    "image": "sponsoren/Kleinesponsoren/sponsoren/3.png",
+    "tier": "bronze",
+    "page": "sponsoren",
+    "order": 3,
+    "active": true
+  },
+  {
+    "name": "Schadenet Bathoorn",
+    "url": "https://www.schadenetbathoornroden.nl/",
+    "image": "sponsoren/Kleinesponsoren/sponsoren/4.jpg",
+    "tier": "bronze",
+    "page": "sponsoren",
+    "order": 4,
+    "active": true
+  },
+  {
+    "name": "Liewes Roden",
+    "url": "https://www.liewesroden.nl/",
+    "image": "sponsoren/Kleinesponsoren/sponsoren/5.jpg",
+    "tier": "bronze",
+    "page": "sponsoren",
+    "order": 5,
+    "active": true
+  },
+  {
+    "name": "Ambacht Media",
+    "url": "https://www.ambachtmedia.nl/",
+    "image": "sponsoren/Kleinesponsoren/sponsoren/6.png",
+    "tier": "bronze",
+    "page": "sponsoren",
+    "order": 6,
+    "active": true
+  },
+  {
+    "name": "Gerrits Barbershop",
+    "url": "https://www.gerritsbarbershop.nl/",
+    "image": "sponsoren/Kleinesponsoren/ringen/1.png",
+    "tier": "bronze",
+    "page": "ringen",
+    "order": 1,
+    "active": true
+  },
+  {
+    "name": "Muziekhuis Da Capo",
+    "url": "https://www.muziekhuisdacapo.nl/",
+    "image": "sponsoren/Kleinesponsoren/ringen/2.png",
+    "tier": "bronze",
+    "page": "ringen",
+    "order": 2,
+    "active": true
+  },
+  {
+    "name": "Huizinga Metalen",
+    "url": "https://www.huizingametalen.nl/",
+    "image": "sponsoren/Kleinesponsoren/ringen/3.png",
+    "tier": "bronze",
+    "page": "ringen",
+    "order": 3,
+    "active": true
+  },
+  {
+    "name": "Jonkman Makelaars",
+    "url": "https://jonkmangarantiemakelaars.nl/",
+    "image": "sponsoren/Kleinesponsoren/ringen/4.png",
+    "tier": "bronze",
+    "page": "ringen",
+    "order": 4,
+    "active": true
+  },
+  {
+    "name": "Auto Louwes",
+    "url": "http://www.autolouwes.nl/",
+    "image": "sponsoren/Kleinesponsoren/ringen/5.jpg",
+    "tier": "bronze",
+    "page": "ringen",
+    "order": 5,
+    "active": true
+  },
+  {
+    "name": "Teerling Keurslager",
+    "url": "https://teerling.keurslager.nl/",
+    "image": "sponsoren/Kleinesponsoren/ringen/6.png",
+    "tier": "bronze",
+    "page": "ringen",
+    "order": 6,
+    "active": true
+  },
+  {
+    "name": "De Korenaar",
+    "url": "https://dekorenaar.echtebakker.nl/nl-nl",
+    "image": "sponsoren/Kleinesponsoren/ringen/7.jpg",
+    "tier": "bronze",
+    "page": "ringen",
+    "order": 7,
+    "active": true
+  },
+  {
+    "name": "Meatpoint Tolbert",
+    "url": "https://meatpointtolbert.nl/",
+    "image": "sponsoren/Kleinesponsoren/lidworden/1.png",
+    "tier": "bronze",
+    "page": "lidworden",
+    "order": 1,
+    "active": true
+  },
+  {
+    "name": "Veenhuizen Dakwerken",
+    "url": "https://www.veenhuizendakwerken.nl/",
+    "image": "sponsoren/Kleinesponsoren/lidworden/2.jpg",
+    "tier": "bronze",
+    "page": "lidworden",
+    "order": 2,
+    "active": true
+  },
+  {
+    "name": "International Motors",
+    "url": "https://www.autosloperij.nl/groningen/groningen/international-motors-bv/",
+    "image": "sponsoren/Kleinesponsoren/lidworden/3.png",
+    "tier": "bronze",
+    "page": "lidworden",
+    "order": 3,
+    "active": true
+  },
+  {
+    "name": "Mebatherm",
+    "url": "https://www.mebatherm.nl/",
+    "image": "sponsoren/Kleinesponsoren/lidworden/4.svg",
+    "tier": "bronze",
+    "page": "lidworden",
+    "order": 4,
+    "active": true
+  },
+  {
+    "name": "AKVM",
+    "url": "https://akvm.nl/contact/",
+    "image": "sponsoren/Kleinesponsoren/lidworden/5.png",
+    "tier": "bronze",
+    "page": "lidworden",
+    "order": 5,
+    "active": true
+  },
+  {
+    "name": "Mijn Makelaar Noordenveld",
+    "url": "https://www.mijnmakelaarnoordenveld.nl/",
+    "image": "sponsoren/Kleinesponsoren/lidworden/6.png",
+    "tier": "bronze",
+    "page": "lidworden",
+    "order": 6,
+    "active": true
+  },
+  {
+    "name": "Foodcafé Roden",
+    "url": "https://foodcaferoden.nl/",
+    "image": "sponsoren/Kleinesponsoren/contact/1.jpg",
+    "tier": "bronze",
+    "page": "contact",
+    "order": 1,
+    "active": true
+  },
+  {
+    "name": "De Groot Roden",
+    "url": "https://degrootroden.nl/",
+    "image": "sponsoren/Kleinesponsoren/contact/2.png",
+    "tier": "bronze",
+    "page": "contact",
+    "order": 2,
+    "active": true
+  },
+  {
+    "name": "Makelaardij Van der Laan",
+    "url": "https://www.makelaardijvanderlaan.nl/",
+    "image": "sponsoren/Kleinesponsoren/contact/3.svg",
+    "tier": "bronze",
+    "page": "contact",
+    "order": 3,
+    "active": true
+  },
+  {
+    "name": "Noordhuis Roden",
+    "url": "https://www.noordhuisroden.nl/",
+    "image": "sponsoren/Kleinesponsoren/contact/4.jpg",
+    "tier": "bronze",
+    "page": "contact",
+    "order": 4,
+    "active": true
+  },
+  {
+    "name": "Scheerhoorn Bloemen",
+    "url": "https://www.scheerhoornbloemen.nl/",
+    "image": "sponsoren/Kleinesponsoren/contact/5.jpg",
+    "tier": "bronze",
+    "page": "contact",
+    "order": 5,
+    "active": true
+  },
+  {
+    "name": "Daan Nijman",
+    "url": "https://www.daannijman.nl/",
+    "image": "sponsoren/Kleinesponsoren/tentoonstelling/1.png",
+    "tier": "bronze",
+    "page": "tentoonstelling",
+    "order": 1,
+    "active": true
+  },
+  {
+    "name": "Kruijer Hoveniers",
+    "url": "https://hovenier.website/peize/kruijer-kruijer-hoveniers/",
+    "image": "sponsoren/Kleinesponsoren/tentoonstelling/2.png",
+    "tier": "bronze",
+    "page": "tentoonstelling",
+    "order": 2,
+    "active": true
+  },
+  {
+    "name": "Autofirst Zeller",
+    "url": "https://www.autofirst-zellerautos.nl/",
+    "image": "sponsoren/Kleinesponsoren/tentoonstelling/3.png",
+    "tier": "bronze",
+    "page": "tentoonstelling",
+    "order": 3,
+    "active": true
+  },
+  {
+    "name": "Keukenhuis Roden",
+    "url": "https://keukenhuisroden.nl/",
+    "image": "sponsoren/Kleinesponsoren/tentoonstelling/4.png",
+    "tier": "bronze",
+    "page": "tentoonstelling",
+    "order": 4,
+    "active": true
+  },
+  {
+    "name": "Molenkamp",
+    "url": "https://www.molenkamp.nl/",
+    "image": "sponsoren/Kleinesponsoren/tentoonstelling/5.png",
+    "tier": "bronze",
+    "page": "tentoonstelling",
+    "order": 5,
+    "active": true
+  }
+]
