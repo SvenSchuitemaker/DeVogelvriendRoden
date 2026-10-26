@@ -104,7 +104,7 @@ function cleanSponsor(mixed $row): array {
     $tier = (string) ($row['tier'] ?? '');
     $page = (string) ($row['page'] ?? '');
     $pages = ['index', 'bestuur', 'agenda', 'sponsoren', 'ringen', 'lidworden', 'contact', 'tentoonstelling'];
-    if ($name === '' || mb_strlen($name) > 120 || !validUrl($url) || strlen($url) > 2048 || !validImage($image) || !in_array($tier, ['gold', 'silver', 'bronze'], true)) {
+    if ($name === '' || strlen($name) > 240 || !validUrl($url) || strlen($url) > 2048 || !validImage($image) || !in_array($tier, ['gold', 'silver', 'bronze'], true)) {
         fail(422, 'Controleer naam, website, categorie en afbeelding.');
     }
     if ($tier === 'gold') $page = '';
@@ -154,10 +154,11 @@ if (isset($_GET['api'])) {
         $files = glob($root . '/sponsoren/uploads/*') ?: [];
         $images = [];
         foreach ($files as $file) {
-            if (is_file($file) && preg_match('/\.(png|jpg|jpeg|webp)$/i', $file)) {
-                $images[] = 'sponsoren/uploads/' . basename($file);
+            if (is_file($file) && preg_match('/\.(png|jpg|jpeg|webp|svg)$/i', $file)) {
+                $images[] = substr($file, strlen($root) + 1);
             }
         }
+        $images = array_values(array_unique($images));
         rsort($images);
         echo json_encode(['images' => $images], JSON_UNESCAPED_UNICODE);
         exit;
@@ -295,7 +296,7 @@ $('cancelEdit').onclick=()=>$('editDialog').close();
 async function move(index,delta){
  const s=records[index],siblings=records.map((x,i)=>({...x,index:i})).filter(x=>x.tier===s.tier&&x.page===s.page).sort((a,b)=>a.order-b.order);
  const i=siblings.findIndex(x=>x.index===index),other=siblings[i+delta];if(!other)return;
- const snapshot=JSON.stringify(records);records[index].order=other.order;records[other.index].order=s.order;
+ const snapshot=JSON.stringify(records),oldOrder=s.order;records[index].order=other.order;records[other.index].order=oldOrder;
  if(records[index].order===records[other.index].order){records[index].order=i+delta+1;records[other.index].order=i+1;}
  try{await save();}catch(err){records=JSON.parse(snapshot);message(err.message,true);}
 }
