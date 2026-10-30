@@ -1,69 +1,37 @@
-# Eigen sponsorbeheer — De Vogelvriend Roden
+# Sponsorbeheer installeren zonder serverinstellingen
 
-De website krijgt een zelfgebouwd beheerpaneel op **https://jouwdomein.nl/admin/**.
-Er is geen Pages CMS, externe database of GitHub-koppeling nodig voor het beheer.
+Voor deze variant is **geen Docker, database of toegang tot PHP-omgevingsvariabelen** nodig. Wel PHP 8.1+ en schrijfrechten voor de PHP-gebruiker.
 
-## Hostingvereisten
+## Eenmalig via FTP
 
-- PHP 8.1 of nieuwer, met fileinfo-extensie.
-- HTTPS op het domein.
-- PHP moet mogen schrijven in de mappen data/ en sponsoren/uploads/.
-- Een schrijfbare privémap buiten de publiek toegankelijke document root.
-- De mogelijkheid om PHP-omgevingsvariabelen in te stellen, bijvoorbeeld via het hostingpaneel of PHP-FPM.
+1. Upload de website inclusief `admin/install.php` en `admin/index.php` naar de PHP-hosting. Maak vooraf een back-up van `data/sponsors.json`.
+2. Maak op je eigen computer een nieuw bestand met de naam `install-code.php` met exact dit formaat (vervang de voorbeeldcode door een **zelfgekozen, willekeurige code van minimaal 24 tekens**, niet je wachtwoord):
 
-**GitHub Pages ondersteunt geen PHP.** Controleer of je hosting PHP en omgevingsvariabelen ondersteunt.
+   ```php
+   <?php return 'VERVANG-DIT-DOOR-EEN-WILLEKEURIGE-CODE-VAN-MINSTENS-24-TEKENS';
+   ```
 
-## Installatie
+3. Upload alleen dit bestand naar `admin/install-code.php` via FTP. **Zet dit bestand nooit in GitHub.**
+4. Open via HTTPS `https://jouwdomein.nl/admin/install.php`, voer je installatiecode in, kies een gebruikersnaam en een sterk wachtwoord (minimaal 12 tekens).
+5. De installatie maakt `admin/config.local.php` met een **wachtwoordhash** aan. De installatie is daarna automatisch vergrendeld.
+6. Verwijder `admin/install-code.php` handmatig via FTP als het er nog is. Verwijder ook de tijdelijke lokale kopie.
+7. Log in via `https://jouwdomein.nl/admin/`.
 
-1. Maak buiten de public/document root een privémap (bijvoorbeeld /home/account/private-vogelvriend) en geef de PHP-gebruiker schrijfrechten.
-2. Geef de PHP-gebruiker schrijfrechten op data/ en sponsoren/uploads/.
-3. Genereer met PHP CLI een password_hash met PASSWORD_DEFAULT, bij voorkeur via een afgeschermde terminal, en sla geen leesbaar wachtwoord in de repository op.
-4. Stel de volgende serveromgevingsvariabelen in:
+**Belangrijk:** `admin/config.local.php` moet op de server blijven staan en mag nooit naar GitHub. Het is een PHP-bestand dat instellingen retourneert zonder ze uit te printen. Beveilig de server zo dat PHP-bestanden daadwerkelijk worden uitgevoerd en nooit als tekst worden gedownload. Gebruik HTTPS.
 
-   | Variabele | Inhoud |
-   | --- | --- |
-   | VOGELVRIEND_PRIVATE_DIR | Absoluut pad naar de privémap buiten de document root |
-   | VOGELVRIEND_ADMIN_USER | Beheerdersgebruikersnaam (standaard admin) |
-   | VOGELVRIEND_ADMIN_PASSWORD_HASH | De PHP password_hash van het eigen wachtwoord |
+## Serververeisten
 
-5. Controleer dat de PHP-server de variabelen ontvangt. Open daarna https://jouwdomein.nl/admin/ en log in.
-6. Maak periodiek back-ups van data/sponsors.json en sponsoren/uploads/. Wijzigingen vanuit de admin worden direct op de server opgeslagen en worden **niet automatisch teruggezet in GitHub**.
+- PHP 8.1+ en `fileinfo` voor uploads.
+- De PHP-gebruiker moet `admin/` (eenmalig), `data/` en `sponsoren/uploads/` kunnen beschrijven.
+- `sys_get_temp_dir()` moet schrijfbaar zijn voor de tijdelijke loginblokkade en schrijf-locks.
+- Je hoeft **geen** `VOGELVRIEND_*`-omgevingsvariabelen in te stellen.
+- Gebruik geen Live Server van VS Code: die voert geen PHP uit.
+- De gegevens staan in `data/sponsors.json`, uploads in `sponsoren/uploads/`. Maak regelmatig back-ups; wijzigingen uit het dashboard gaan niet vanzelf naar GitHub.
 
-Als de configuratie ontbreekt, blijft de admin uit veiligheid uitgeschakeld.
+## Beveiliging en herstel
 
-## Beheerfuncties
+Zonder `admin/install-code.php` kan niemand de installer starten. Na het aanmaken van een account is de installatie gesloten. Voor een nieuwe installatie moet `config.local.php` bewust via FTP worden verwijderd (maak eerst een back-up), en moet je opnieuw zelf een install-codebestand plaatsen. Verander dit niet via een publiek formulier.
 
-- Sponsoren toevoegen, bewerken, uitschakelen en verwijderen.
-- Bedrijfsnaam, link, logo, volgorde, categorie en pagina instellen.
-- Gold: hoofdsponsoren op iedere pagina.
-- Silver: sponsorenpagina.
-- Brons: gekozen pagina.
-- JPG-, PNG- en WebP-logo's uploaden (maximaal 5 MB).
-- Alle bestaande sponsorlogo's uit de mappen `sponsoren/Hoofdsponsoren/` en `sponsoren/Kleinesponsoren/` terugvinden in de galerij, naast nieuw geüploade logo's. Bestaande SVG-bestanden blijven bruikbaar, maar SVG-upload is niet toegestaan.
-- Gold verschijnt op alle pagina's; Silver op de sponsorenpagina; Brons op de geselecteerde pagina. Binnen een groep kun je de volgorde aanpassen met de pijltjes.
-- De website moet via een PHP-webserver draaien, niet met alleen de VS Code Live Server op poort 5500.
+**Controleer na installatie** login, fout wachtwoord, upload, toevoegen, bewerken, verwijderen en tonen op de juiste pagina.
 
-De admin past data/sponsors.json aan. De bestaande pagina's lezen dat bestand direct met js/sponsors.js. Voor veranderingen in sponsorinformatie is geen codewijziging nodig.
-
-## Beveiliging
-
-- PHP-sessies met veilige, HttpOnly- en SameSite-cookies.
-- Password hashing, CSRF-controle en een eenvoudige blokkade na vijf mislukte loginpogingen per IP.
-- HTTPS verplicht buiten localhost.
-- Privémap buiten de public root en geen inloggegevens in GitHub.
-- Bestandscontrole bij upload en willekeurige bestandsnamen.
-- Uploadmap blokkeert PHP-bestanden op Apache via .htaccess. Nginx-hosting moet uitvoerbare bestanden in deze map ook aan de serverkant blokkeren.
-- Bij het verwijderen van een sponsor blijven logo's voor hergebruik behouden.
-
-## Testen na deployment
-
-- [ ] Admin-login werkt op het domein met HTTPS.
-- [ ] Onjuist wachtwoord geeft geen toegang.
-- [ ] Toevoegen, bewerken, uitschakelen en verwijderen werkt.
-- [ ] Een geüpload logo verschijnt op de bedoelde pagina.
-- [ ] Gold, Silver, Brons en sortering werken correct.
-- [ ] Externe sponsorlink opent in een nieuw tabblad.
-- [ ] Uitloggen en herladen vragen opnieuw om een login.
-- [ ] Er zijn back-ups van data/ en sponsoren/uploads/.
-
-De PR levert de code. De installatie kan pas worden afgerond wanneer het hostingtype en de configuratiemogelijkheden bekend zijn.
+Deze installatie vervangt de eerdere stappen met privéservermap en omgevingsvariabelen.

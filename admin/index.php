@@ -6,9 +6,11 @@ declare(strict_types=1);
  * Credentials and writable private files must live OUTSIDE the public document root.
  */
 $root = dirname(__DIR__);
-$private = getenv('VOGELVRIEND_PRIVATE_DIR') ?: '';
-$user = getenv('VOGELVRIEND_ADMIN_USER') ?: 'admin';
-$hash = getenv('VOGELVRIEND_ADMIN_PASSWORD_HASH') ?: '';
+$configFile = __DIR__ . '/config.local.php';
+$config = is_file($configFile) ? require $configFile : null;
+$private = sys_get_temp_dir();
+$user = is_array($config) ? (string) ($config['user'] ?? '') : '';
+$hash = is_array($config) ? (string) ($config['password_hash'] ?? '') : '';
 $host = strtolower((string) ($_SERVER['HTTP_HOST'] ?? ''));
 $local = preg_match('/^(localhost|127\.0\.0\.1)(:\d+)?$/', $host) === 1;
 $secure = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') || (string) ($_SERVER['SERVER_PORT'] ?? '') === '443';
@@ -21,11 +23,10 @@ if (!$secure && !$local) {
     http_response_code(403);
     exit('Admin vereist HTTPS.');
 }
-$documentRoot = realpath((string) ($_SERVER['DOCUMENT_ROOT'] ?? $root)) ?: realpath($root);
-$privatePath = $private !== '' ? realpath($private) : false;
-if (!$privatePath || !$documentRoot || str_starts_with($privatePath . DIRECTORY_SEPARATOR, rtrim($documentRoot, DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR) || !is_writable($privatePath) || !is_string($hash) || $hash === '') {
+if (!is_array($config) || $user === '' || $hash === '' || !is_writable($private)) {
     http_response_code(503);
-    exit('Admin is nog niet geconfigureerd. Zie SPONSORBEHEER.md.');
+    header('Content-Type: text/html; charset=utf-8');
+    exit('Admin is nog niet geïnstalleerd. Volg de stappen in SPONSORBEHEER.md en open daarna <a href="install.php">de installatiepagina</a>.');
 }
 ini_set('session.use_strict_mode', '1');
 ini_set('session.use_only_cookies', '1');
@@ -66,7 +67,7 @@ function sponsors(): array {
 }
 function writeSponsors(array $list): void {
     global $private;
-    $lock = fopen($private . '/sponsors.lock', 'c');
+    $lock = fopen($private . '/vogelvriend-' . hash('sha256', __DIR__) . '-sponsors.lock', 'c');
     if (!$lock || !flock($lock, LOCK_EX)) fail(500, 'Opslag is niet beschikbaar.');
     $json = json_encode($list, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_THROW_ON_ERROR) . "\n";
     $target = dataFile();
@@ -122,7 +123,7 @@ if (isset($_GET['api'])) {
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && $_GET['api'] === 'login') {
         csrf();
         $fingerprint = hash('sha256', (string) ($_SERVER['REMOTE_ADDR'] ?? 'unknown'));
-        $ratePath = $private . '/login-' . $fingerprint . '.json';
+        $ratePath = $private . '/vogelvriend-' . hash('sha256', __DIR__) . '-login-' . $fingerprint . '.json';
         $rate = json_decode((string) @file_get_contents($ratePath), true) ?: ['count' => 0, 'until' => 0];
         if (($rate['until'] ?? 0) > time()) fail(429, 'Te veel pogingen. Probeer over 15 minuten opnieuw.');
         $ok = hash_equals($user, (string) ($_POST['username'] ?? '')) && password_verify((string) ($_POST['password'] ?? ''), $hash);
