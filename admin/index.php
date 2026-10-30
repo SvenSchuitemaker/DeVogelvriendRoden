@@ -154,7 +154,6 @@ if (isset($_GET['api'])) {
         // Show uploaded logos, all legacy sponsor folders, and already linked images.
         // Existing SVGs can be selected, but only safe raster formats can be uploaded.
         $images = [];
-        $folders = [$root . '/sponsoren/uploads'];
         $legacy = new RecursiveIteratorIterator(
             new RecursiveDirectoryIterator($root . '/sponsoren', FilesystemIterator::SKIP_DOTS)
         );
@@ -306,8 +305,11 @@ $('cancelEdit').onclick=()=>$('editDialog').close();
 async function move(index,delta){
  const s=records[index],siblings=records.map((x,i)=>({...x,index:i})).filter(x=>x.tier===s.tier&&x.page===s.page).sort((a,b)=>a.order-b.order);
  const i=siblings.findIndex(x=>x.index===index),other=siblings[i+delta];if(!other)return;
- const snapshot=JSON.stringify(records),oldOrder=s.order;records[index].order=other.order;records[other.index].order=oldOrder;
- if(records[index].order===records[other.index].order){records[index].order=i+delta+1;records[other.index].order=i+1;}
+ const snapshot=JSON.stringify(records);
+ // Normalize the entire group to unique positions so moving works even when multiple sponsors share an order.
+ const reordered=siblings.map(x=>x.index);const target=reordered.indexOf(index);
+ reordered.splice(target,1);reordered.splice(target+delta,0,index);
+ reordered.forEach((recordIndex,position)=>{records[recordIndex].order=position+1;});
  try{await save();}catch(err){records=JSON.parse(snapshot);message(err.message,true);}
 }
 async function removeSponsor(index){
