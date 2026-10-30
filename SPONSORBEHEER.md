@@ -39,7 +39,9 @@ Als de configuratie ontbreekt, blijft de admin uit veiligheid uitgeschakeld.
 - Silver: sponsorenpagina.
 - Brons: gekozen pagina.
 - JPG-, PNG- en WebP-logo's uploaden (maximaal 5 MB).
-- Bestaande logo's selecteren; bestaande SVG-bestanden blijven bruikbaar, maar SVG-upload is niet toegestaan.
+- Alle bestaande sponsorlogo's uit de mappen `sponsoren/Hoofdsponsoren/` en `sponsoren/Kleinesponsoren/` terugvinden in de galerij, naast nieuw geüploade logo's. Bestaande SVG-bestanden blijven bruikbaar, maar SVG-upload is niet toegestaan.
+- Gold verschijnt op alle pagina's; Silver op de sponsorenpagina; Brons op de geselecteerde pagina. Binnen een groep kun je de volgorde aanpassen met de pijltjes.
+- De website moet via een PHP-webserver draaien, niet met alleen de VS Code Live Server op poort 5500.
 
 De admin past data/sponsors.json aan. De bestaande pagina's lezen dat bestand direct met js/sponsors.js. Voor veranderingen in sponsorinformatie is geen codewijziging nodig.
 
