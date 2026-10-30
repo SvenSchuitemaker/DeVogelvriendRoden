@@ -151,11 +151,21 @@ if (isset($_GET['api'])) {
         exit;
     }
     if ($_SERVER['REQUEST_METHOD'] === 'GET' && $_GET['api'] === 'media') {
-        $files = glob($root . '/sponsoren/uploads/*') ?: [];
+        // Show uploaded logos, all legacy sponsor folders, and already linked images.
+        // Existing SVGs can be selected, but only safe raster formats can be uploaded.
         $images = [];
-        foreach ($files as $file) {
-            if (is_file($file) && preg_match('/\.(png|jpg|jpeg|webp|svg)$/i', $file)) {
-                $images[] = substr($file, strlen($root) + 1);
+        $folders = [$root . '/sponsoren/uploads'];
+        $legacy = new RecursiveIteratorIterator(
+            new RecursiveDirectoryIterator($root . '/sponsoren', FilesystemIterator::SKIP_DOTS)
+        );
+        foreach ($legacy as $file) {
+            if (!$file->isFile() || !preg_match('/\.(png|jpg|jpeg|webp|svg)$/i', $file->getFilename())) continue;
+            $path = str_replace('\\\\', '/', substr($file->getPathname(), strlen($root) + 1));
+            $images[] = $path;
+        }
+        foreach (sponsors() as $sponsor) {
+            if (isset($sponsor['image']) && is_string($sponsor['image']) && validImage($sponsor['image'])) {
+                $images[] = $sponsor['image'];
             }
         }
         $images = array_values(array_unique($images));
@@ -242,7 +252,7 @@ footer{color:#6a7d8b;text-align:center;margin:24px}.hidden{display:none!importan
 <div class="field full"><label>Logo</label><img id="preview" class="preview" alt="Gekozen logo"><input id="image" readonly required placeholder="Selecteer een logo"><div class="actions" style="margin-top:8px"><button class="btn secondary" type="button" id="chooseLogo">Uit mediabibliotheek</button> <button class="btn secondary" type="button" id="editUpload">Nieuw logo uploaden</button></div></div>
 </div><div class="bar"><button class="btn secondary" type="button" id="cancelEdit">Annuleren</button><button class="btn" type="submit">Opslaan</button></div>
 </form></dialog>
-<dialog id="mediaDialog"><h2>Mediabibliotheek</h2><p>Kies een bestaand uploadlogo of voeg een nieuw bestand toe.</p><input id="file" type="file" accept="image/jpeg,image/png,image/webp"><button id="sendFile" class="btn" style="margin:12px 0">Uploaden</button><div id="media" class="media"></div><div class="bar"><button class="btn secondary" id="closeMedia">Sluiten</button></div></dialog>
+<dialog id="mediaDialog"><h2>Mediabibliotheek</h2><p>Kies een bestaand sponsorlogo uit de volledige galerij, of upload een nieuw bestand.</p><input id="file" type="file" accept="image/jpeg,image/png,image/webp"><button id="sendFile" class="btn" style="margin:12px 0">Uploaden</button><div id="media" class="media"></div><div class="bar"><button class="btn secondary" id="closeMedia">Sluiten</button></div></dialog>
 <footer>Eigen sponsorbeheer · opslag op eigen server</footer>
 <script>
 const csrf = <?= json_encode($_SESSION['csrf']) ?>;
@@ -308,7 +318,7 @@ function openMedia(forEditor){chooseForEditor=forEditor;$('mediaDialog').showMod
 async function loadMedia(){
  try{
   const images=(await request('media')).images,media=$('media');media.replaceChildren();
-  if(!images.length)media.append(elem('p','','Nog geen geüploade afbeeldingen.'));
+  if(!images.length)media.append(elem('p','','Nog geen sponsorlogo's gevonden.'));
   for(const path of images){const b=elem('button');b.type='button';const im=elem('img');im.src=imgSrc(path);im.alt=path.split('/').pop();b.append(im);b.onclick=()=>{if(chooseForEditor){$('image').value=path;$('preview').src=imgSrc(path);$('mediaDialog').close();}else{message('Logo beschikbaar in de mediabibliotheek: '+path);$('mediaDialog').close();}};media.append(b);}
  }catch(err){alert(err.message);}
 }
