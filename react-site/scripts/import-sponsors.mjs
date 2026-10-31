@@ -1,0 +1,14 @@
+import {readFileSync} from "node:fs";
+import {resolve} from "node:path";
+import {createClient} from "@supabase/supabase-js";
+const url=process.env.SUPABASE_URL, key=process.env.SUPABASE_SERVICE_ROLE_KEY;
+if(!url||!key)throw Error("SUPABASE_URL en SUPABASE_SERVICE_ROLE_KEY ontbreken");
+const client=createClient(url,key,{auth:{persistSession:false}});
+const source=JSON.parse(readFileSync(resolve(process.cwd(),"../data/sponsors.json"),"utf8"));
+const sponsors=source.map(s=>({name:s.name,url:s.url,image:s.image,tier:s.tier,page:s.tier==="bronze"?(s.page||"index"):null,sort_order:s.order||0,active:s.active!==false}));
+const {count,error:readError}=await client.from("sponsors").select("*",{count:"exact",head:true});
+if(readError)throw readError;
+if(count)throw Error("Import afgebroken: de sponsortabel bevat al gegevens. Voorkomt dubbele records.");
+const {error}=await client.from("sponsors").insert(sponsors);
+if(error)throw error;
+console.log(`Geïmporteerd: ${sponsors.length} sponsors.`);
